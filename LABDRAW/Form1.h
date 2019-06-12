@@ -78,13 +78,15 @@ namespace LABDRAW {
 #pragma endregion
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 		Graphics^ gr = this->CreateGraphics();
-		Pen^ pencil0 = gcnew Pen(Color::Green, 3.0f);
+		Pen^ pencil0 = gcnew Pen(Color::Green, 2.0f);
 		Pen^ pencil1 = gcnew Pen(Color::Violet, 3.0f);
+		SolidBrush^ br = gcnew SolidBrush(Color::BlueViolet);
 		gr->DrawLine(pencil0, 40, 40, 320, 320);
 		gr->DrawEllipse(pencil1, 100, 100, 25, 50);
 		gr->DrawEllipse(pencil0, 100, 100, 100, 100);
 		gr->DrawLine(pencil1, 4, 64, 250, 30);
 		gr->DrawRectangle(pencil1, 250, 100, 40, 80);
+		gr->FillEllipse(br, 250, 100, 40, 80);
 	}
 	};
 }
